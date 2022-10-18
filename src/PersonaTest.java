@@ -5,26 +5,74 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PersonaTest {
     @Test
-    public void hasLegalAge_shouldReturnTrue(){
+    public void hasLegalAge_validAge(){
         //Given
-        Persona personaTest = new Persona("Anita", 21);
+        Persona personaValidAge = new Persona("Anita", 21);
 
         //When
-        boolean respuesta = personaTest.hasLegalAge();
+        boolean answerValidAge = personaValidAge.hasLegalAge();
 
         //Then
-        assertTrue(respuesta);
+        assertTrue(answerValidAge);
     }
 
     @Test
-    public void hasLegalAge_shouldReturnFalse(){
+    public void hasLegalAge_wrongAge(){
         //Given
-        Persona personaTest = new Persona("Anita", 12);
+        Persona personaWrongAge = new Persona("Anita", 12);
 
         //When
-        boolean respuesta = personaTest.hasLegalAge();
+        boolean answerWrongAge = personaWrongAge.hasLegalAge();
 
         //Then
-        assertFalse(respuesta);
+        assertFalse(answerWrongAge);
+    }
+
+    @Test
+    public void hasValidLengthName_validName(){
+        //Given
+        Persona personaValidName = new Persona("Julian", 18);
+
+        //When
+        boolean answerValidName = personaValidName.hasValidLengthName();
+
+        //Then
+        assertTrue(answerValidName);
+    }
+
+    @Test
+    public void hasValidLengthName_wrongName(){
+        //Given
+        Persona personaWrongName = new Persona("Ana", 18);
+
+        //When
+        boolean answerWrongName = personaWrongName.hasValidLengthName();
+
+        //Then
+        assertFalse(answerWrongName);
+    }
+
+    @Test
+    public void hasValidCharactersInName_validCharacters(){
+        //Given
+        Persona personaValidCharacters = new Persona("Ana", 18);
+
+        //When
+        boolean answerValidCharacters = personaValidCharacters.hasValidCharactersInName();
+
+        //Then
+        assertTrue(answerValidCharacters);
+    }
+
+    @Test
+    public void hasValidCharactersInName_wrongCharacters(){
+        //Given
+        Persona personaWrongCharacters = new Persona("N1c0las", 18);
+
+        //When
+        boolean answerWrongCharacters = personaWrongCharacters.hasValidCharactersInName();
+
+        //Then
+        assertFalse(answerWrongCharacters);
     }
 }

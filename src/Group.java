@@ -29,7 +29,7 @@ public class Group {
     }
 
     public void addPersona(Persona persona){
-        if (persona.hasLegalAge() && persona.validCharacterLength() && persona.validCharactersName()){
+        if (persona.hasLegalAge() && persona.hasValidLengthName() && persona.hasValidCharactersInName()){
             this.groupList.add(persona);
         }
     }
